@@ -1,5 +1,5 @@
 import os
-
+# adotar o conceeito de docstrings para projetos de longa duração
 restaurantes = [{'nome':'Pizza Hut', 'categoria': 'Fast food', 'ativo': False}, 
                 {'nome': 'VeggieFood', 'categoria': 'vegetariano', 'ativo': True}]
 

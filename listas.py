@@ -68,7 +68,7 @@ print(numeros_quadrados)
 filosofos = [{'nome': 'Platão', 'obra': 'Os últimos dias de Sócrates'}, {'nome': 'Dostoiévski', 'obra': 'Noites brancas'}]
 
 if 'obra' in filosofos:
-    print('A chave 'obra' existe no dicionário')
+    print('A chave obra existe no dicionário')
 else:
     print('A chave não existe no dicionário')
 
