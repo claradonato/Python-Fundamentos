@@ -1,15 +1,16 @@
 from .avaliacao import Avaliacao
+from modelos.cardapio.item_cardapio import ItemCardapio
 
 class Restaurante:
     restaurantes = []
-    tam_max = 5
 
     def __init__(obj, nome, categoria): # obrigatoriamente quero a instância com os valores definidos
         obj._nome = nome.title()
         obj._categoria = categoria.upper()
         obj._ativo = False
-        Restaurante.restaurantes.append(obj)
         obj._avaliacao = []
+        obj._cardapio = []
+        Restaurante.restaurantes.append(obj)
 
     def __str__(obj):
         return f'{obj._nome} | {obj._categoria}'
@@ -49,6 +50,19 @@ class Restaurante:
         quant_notas = len(obj._avaliacao)
         media = round(soma/quant_notas, 1)
         return media
+
+    def adicionar_cardapio(obj, item):
+        if isinstance(item, ItemCardapio):
+            obj._cardapio.append(item)
+
+    def listar_cardapio(obj):
+        for i,item in enumerate(obj._cardapio, start=1):
+            if hasattr(item, 'descricao'):
+                print(f'{i}. Nome: {item._nome} | Preço: {item._preco} | Descrição: {item.descricao}')
+            elif hasattr(item, 'tamanho'):
+                print(f'{i}. Nome: {item._nome} | Preço: {item._preco} | Tamanho: {item.tamanho}')
+            else:
+                print(f'{i}. Nome: {item._nome} | Preço: {item._preco} | Tamanho: {item.tam} | Tipo: {item.tipo} | Descrição: {item.desc}')
 
 # quando temos "__algumacoisa__" significa que é um método padrão que toda classe python vai ter
 # utilize dir ou vars para visualizar objetos no print
