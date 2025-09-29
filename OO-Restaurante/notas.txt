@@ -1,0 +1,5 @@
+comandos:
+pip freeze
+pip freeze > requirements.txt       aqui eu to guardando todas as depedências dentro do meu venv
+
+pesquise também: virtualenv
